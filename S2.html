@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script src="./popper.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script src="./jqcrud.js"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./jqstyles.css" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Abdullah Haroon-Full stack30983e098</h1>
-</body>
+  </head>
+  <body>
+    <a href=""></a>
+    <div id="users">Loading ...</div>
+
+    <div
+      class="modal fade"
+      id="updateModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Update Record</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="updateId" /> <br />
+            <div class="form-group">
+              <label for="updateUsername">User Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="updateUsername"
+                id="updateUsername"
+                aria-describedby="updateHelpId"
+                placeholder=""
+              />
+              <small id="updateHelpId" class="form-text text-muted"
+                >Enter Username to Update</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="updateEmail">Email</label>
+              <textarea
+                class="form-control"
+                name="updateEmail"
+                id="updateEmail"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="updateSave" class="btn btn-primary">Update</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
