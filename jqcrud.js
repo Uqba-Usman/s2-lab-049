@@ -6,6 +6,28 @@ $(function () {
     var username = $("#updateUsername").val();
     var email = $("#updateEmail").val();
     console.log("id, usernam, email: ", id, username, email);
+
+    $(".error").hide();
+    var hasError = false;
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+    var emailaddressVal = $("#updateEmail").val();
+    if (emailaddressVal == "") {
+      $("#updateEmail").after(
+        '<span class="error">Please enter your email address.</span>'
+      );
+      hasError = true;
+    } else if (!emailReg.test(emailaddressVal)) {
+      $("#updateEmail").after(
+        '<span class="error">Enter a valid email address.</span>'
+      );
+      hasError = true;
+    }
+
+    if (hasError == true) {
+      return false;
+    }
+
     $.ajax({
       url: "https://jsonplaceholder.typicode.com/users/" + id,
       data: { username, email },
